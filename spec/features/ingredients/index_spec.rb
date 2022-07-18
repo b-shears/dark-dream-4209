@@ -21,7 +21,5 @@ RSpec.describe 'ingredients index page' do
     expect(page).to have_content("Possum")
     expect(page).to have_content(1)
     expect(page).to have_content("Grease")
-
-
   end
 end

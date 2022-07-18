@@ -11,17 +11,15 @@ RSpec.describe Ingredient, type: :model do
     it {should have_many(:recipes).through(:recipe_ingredients)}
   end
 
-  describe 'model methods' do
-    it "#recipe_count" do
-      spaghetti = Recipe.create!(name: "Spaghetti", complexity: 2, genre: "Italian")
-      possum_chili = Recipe.create!(name: "Possum Chili", complexity: 3, genre: "Cajun")
-      deep_fried_twinkie = Recipe.create!(name: "Deep Fried Twinks", complexity: 4, genre: "Dessert")
+  describe 'class methods' do
+    describe '#self.total_cost' do
+      it 'adds the total cost of all recipes' do
+        possum_chili = Recipe.create!(name: "Possum Chili", complexity: 3, genre: "Cajun")
+        tomatoes = possum_chili.ingredients.create!(name: "Tomatoes", cost: 1)
+        possum = possum_chili.ingredients.create!(name: "Possum", cost: 2)
 
-      ingredient = Ingredient.create!(name: "Tomatoes", cost: 1)
-
-      recipe_ingredient_1 = RecipeIngredient.create!(recipe_id: spaghetti.id, ingredient_id: ingredient.id)
-      recipe_ingredient_1 = RecipeIngredient.create!(recipe_id: possum_chili.id, ingredient_id: ingredient.id)
-      expect(ingredient.recipe_count).to eq(2)
+        expect(possum_chili.ingredients.total_cost).to eq(3)
+      end
     end
   end
 end
