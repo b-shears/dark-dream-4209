@@ -1,6 +1,6 @@
 # Hells Kitchen
-
-Fork this repository and clone your newly created repository. 
+####
+Fork this repository and clone your newly created repository.
 
 ## Be sure to read all user stories BEFORE beginning your work
 ---
@@ -35,15 +35,15 @@ When you run rspec, you should have 11 failing tests to start.
 
 ###  Overview
 
-We will be creating an application to track recipes and ingredients at Hell's Kitchen. 
+We will be creating an application to track recipes and ingredients at Hell's Kitchen.
 
 Recipes will have a name, complexity and genre. For example Pasta, 2 (integer), Italian.
 
 Ingredients will have a name and a cost stored as an integer.
 
- 
+
 ### User Stories
- 
+
 ```
 User Story 1 of 4
 As a visitor,
@@ -81,5 +81,3 @@ I see the total cost of all of the ingredients in the recipe.
 ```
 User Story Extension
 On all index pages, all information is listed alphabetically.
-	
-
